@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<%= turbo_frame_tag "post_form" do %>
+<%= render 'form', post: @post %>
+<% end %>
+
+<%= turbo_stream_from "posts" %>
+
+<%= turbo_frame_tag "posts" do %>
+<%= render @posts %>
+<% end %>
